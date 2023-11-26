@@ -8,7 +8,13 @@ body {
     background-color: #1E1E1E;
     font-family: 'Inter', sans-serif;
     font-family: 'Montserrat', sans-serif;
-    padding: 0 150px 20px;
+    padding: 0 14px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1140px;
 }
 
 .header {
@@ -22,6 +28,40 @@ body {
     display: flex;
     align-items: baseline;
     gap: 53px;
+}
+
+.header__contacts {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #E4E5EA;
+    display: flex;
+    gap: 49px;
+
+    @media (max-width: 1320px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    @media (max-width: 1200px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 1140px) {
+        visibility: hidden;
+    }
+}
+
+.contacts__icons {
+    display: flex;
+    gap: 34px;
+
+    @media (max-width: 1320px) {
+        justify-content: flex-end;
+    }
 }
 
 .logo__container {
@@ -44,7 +84,7 @@ body {
     color: #E4E5EA;
 }
 
-.navbar__container {
+.navbar__container>ul {
     display: flex;
 }
 
@@ -64,23 +104,6 @@ body {
     font-size: 16px;
     line-height: 19px;
     color: #E4E5EA;
-}
-
-.header__contacts {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: right;
-    color: #E4E5EA;
-    display: flex;
-    gap: 49px;
-}
-
-.contacts__icons {
-    display: flex;
-    gap: 34px;
 }
 
 .main {
@@ -159,6 +182,10 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+
+    @media (max-width: 1120px) {
+        justify-content: flex-end;
+    }
 }
 
 .content__item {
@@ -213,9 +240,27 @@ body {
     flex-direction: column;
 }
 
-.footer__main-container {
+.footer__main_container {
     display: flex;
     flex-direction: row;
+    margin-bottom: 33px;
+
+    @media (max-width: 1140px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 350px) {
+        margin-bottom: 50px;
+    }
+}
+
+.footer__nav_container {
+    display: flex;
+    
+    @media (max-width: 350px) {
+       flex-direction: column;
+       gap: 30px;
+    }
 }
 
 .footer__title {
@@ -270,10 +315,19 @@ body {
 .footer__contacts {
     margin: 0 0 0 auto;
     text-align: right;
+
+    @media (max-width: 1140px) {
+        margin: 0;
+        text-align: left;
+    }
 }
 
 .contacts {
     gap: 24px;
+
+    @media (max-width: 1140px) {
+        align-items: flex-start;
+    }
 }
 
 .phone {
@@ -284,6 +338,10 @@ body {
     line-height: 19px;
     text-align: right;
     color: #E4E5EA;
+
+    @media (max-width: 1140px) {
+        text-align: left;
+    }
 }
 
 .footer__icons {
@@ -301,6 +359,10 @@ body {
     text-align: right;
     color: #E4E5EA;
     margin-bottom: 5px;
+
+    @media (max-width: 1140px) {
+        text-align: left;
+    }
 }
 
 .footer__confidential {
@@ -311,6 +373,10 @@ body {
     line-height: 15px;
     text-align: right;
     color: #E4E5EA;
+
+    @media (max-width: 1140px) {
+        text-align: left;
+    }
 }
 
 .red-light {
@@ -325,23 +391,14 @@ body {
     z-index: -1;
 }
 
-.purple-light {
-    position: absolute;
-    width: 259px;
-    height: 259px;
-    left: 602px;
-    top: -154px;
-    background: #833AB4;
-    opacity: 0.5;
-    filter: blur(196px);
-    z-index: -1;
-}
-
 .redball-small {
     position: absolute;
     left: 851px;
     top: 547px;
     z-index: -1;
+    @media (max-width: 980px) and (min-width: 351px) {
+        display: none;
+    }
 }
 
 .redball-big {
@@ -355,6 +412,21 @@ body {
     position: absolute;
     left: 868px;
     top: -2px;
+    z-index: -1;
+    @media (max-width: 980px) and (min-width: 351px) {
+        display: none;
+    }
+}
+
+.purple-light {
+    position: absolute;
+    width: 259px;
+    height: 259px;
+    left: 602px;
+    top: -154px;
+    background: #833AB4;
+    opacity: 0.5;
+    filter: blur(196px);
     z-index: -1;
 }
 
@@ -481,7 +553,7 @@ body {
         background: #1E1E1E;
     }
 
-    .footer__main-container {
+    .footer__main_container {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -514,23 +586,8 @@ body {
         word-wrap: break-word;
     }
 
-    .footer__contacts {
-        text-align: left;
-        margin: 0;
-        margin-bottom: 50px;
-    }
-
     .contacts {
         gap: 11px;
-        align-items: flex-start;
-    }
-
-    .footer__copyright {
-        text-align: left;
-    }
-
-    .footer__confidential {
-        text-align: left;
     }
 
     .red-light {
