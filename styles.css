@@ -473,6 +473,12 @@ body {
     opacity: 0.5;
     filter: blur(196px);
     z-index: -1;
+    @media (max-width: 900px) {
+        width: 25%;
+    }
+    @media (max-width: 750px) and (min-width:351px){
+        display: none;
+    }
 }
 
 .purpleball-mobile {
